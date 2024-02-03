@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Titillium+Web:wght@700&display=swap');
+
+:root {
+    --font-clr: #F2F2F2;
+    --highlight-clr: #BF1111;
+    --secondary-clr: #173840;
+    --bg-clr: #011C26;
+    
+    --primary-font: 'Titillium Web', sans-serif;
+    --secundary-font: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--bg-clr);
+    color: var(--font-clr);
+    font-family: var(--secundary-font);
+}
+
+header nav {
+    padding: 1rem;
+    font-family: var(--primary-font);
+    font-size: 1.5rem;
+    text-align: end;
+}
+
+.ctb-balance {
+    font-family: var(--primary-font);
+    color: var(--highlight-clr);
+}
+
+.main-container {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slot-machine {
+    background-color: var(--secondary-clr);
+    border-bottom: var(--highlight-clr) solid 2px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.slot-machine-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.slot {
+    background-color: var(--bg-clr);
+    width: 16rem;
+    height: 16rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slot-icon {
+    width: 50%; 
+}
+
+.slot-machine-lever {
+    font-size: 1rem;
+    background-color: var(--highlight-clr);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 2% 5%;
+    transition: 0.5s;
+}
+
+.slot-machine-lever:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-container {
+        padding: 2rem;
+    }
+    .slot {
+        width: auto;
+        height: auto;
+    }
+    .slot-icon {
+        width: 60%;
+    }
+}
