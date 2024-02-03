@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Titillium+Web:wght@700&display=swap');
 
 :root {
-    --font-clr: #F2F2F2;
-    --highlight-clr: #BF1111;
-    --secondary-clr: #173840;
-    --bg-clr: #011C26;
+    --font-clr: #F5F5F5;
+    --highlight-clr: #F99417;
+    --secondary-clr: #4D4C7D;
+    --bg-clr: #363062;
     
     --primary-font: 'Titillium Web', sans-serif;
     --secundary-font: 'Poppins', sans-serif;
@@ -22,16 +22,25 @@ body {
     font-family: var(--secundary-font);
 }
 
-header nav {
-    padding: 1rem;
-    font-family: var(--primary-font);
+header {
+    border-top: var(--highlight-clr) solid 2px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.ctb-title {
-    color: var(--highlight-clr);
+.ctb-container {
+    background-color: var(--highlight-clr);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 1% 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s;
+}
+.ctb-balance {
+    font-family: var(--primary-font);
 }
 
 .main-container {
@@ -49,7 +58,7 @@ header nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .slot-machine-content {
