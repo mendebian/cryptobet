@@ -25,12 +25,12 @@ body {
 header nav {
     padding: 1rem;
     font-family: var(--primary-font);
-    font-size: 1.5rem;
-    text-align: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.ctb-balance {
-    font-family: var(--primary-font);
+.ctb-title {
     color: var(--highlight-clr);
 }
 

@@ -11,15 +11,45 @@ function updateBalance(win = false) {
         balance -= 1; 
         if (balance <= 0) {
             balance = 100; 
-            alert('Você perdeu todo o seu saldo! O saldo foi resetado para 100 CTB.');
         }
     }
 
     localStorage.setItem('ctbBalance', balance); 
-    document.querySelector('.ctb-balance').textContent = `CTB ${balance}`; 
+    document.querySelector('.ctb-balance').textContent = balance; 
 }
 
 function spinSlots() {
+    const icons = [
+        './src/img/bell.png',
+        './src/img/cherry.png',
+        './src/img/gampe.png',
+        './src/img/seven.png',
+        './src/img/gold-pot.png',
+        './src/img/bar.png'
+    ];
+
+    const slots = document.querySelectorAll('.slot');
+
+    let spins = 0;
+    const maxSpins = 10
+
+    const spinInterval = setInterval(() => {
+        slots.forEach(slot => {
+            const icon = icons[getRandomNumber()];
+            const slotIcon = slot.querySelector('.slot-icon');
+            slotIcon.src = icon;
+        });
+
+        spins++;
+
+        if (spins >= maxSpins) {
+            clearInterval(spinInterval);
+            displayResult();
+        }
+    }, 100);
+}
+
+function displayResult() {
     const icons = [
         './src/img/bell.png',
         './src/img/cherry.png',
@@ -52,5 +82,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (!localStorage.getItem('ctbBalance')) {
         localStorage.setItem('ctbBalance', 100); 
     }
-    document.querySelector('.ctb-balance').textContent = `CTB ${localStorage.getItem('ctbBalance')}`;
+    document.querySelector('.ctb-balance').textContent = localStorage.getItem('ctbBalance');
 });
